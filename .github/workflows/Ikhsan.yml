@@ -1,0 +1,24 @@
+name: Python CI - Persiapan P07
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  python-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Cetak Versi Python
+        run: python --version
+
+      - name: Pesan Keberhasilan
+        run: echo "Workflow Persiapan P07 berhasil dijalankan"
